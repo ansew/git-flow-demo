@@ -1,14 +1,32 @@
-import logo from './logo.svg';
+
+import { render } from '@testing-library/react';
+import React, { Fragment } from 'react';
 import './App.css';
-import Footer from './footer'
+import Footer from './components/footer'
 
-function App() {
-  return (
-    <div className="App">
-      <Footer />
+// function App() {
+//   return (
+//     <div className="App">
+//       <Footer />
 
-    </div>
-  );
+//     </div>
+//   );
+// }
+
+class App extends React.Component {
+  constructor (props){
+    super(props);
+
+  }
+  render(){
+    return(
+      <Fragment>
+        <Footer />
+        </Fragment>
+    )
+  }
 }
+
+
 
 export default App;
