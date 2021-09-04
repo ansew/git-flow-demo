@@ -7,7 +7,7 @@ function Footer(){
     return(
         <footer class="page-footer">
           <div class="footer-copyright">
-            <div class="container">
+            <div className="container">
             © 2021 Copyright Daniel Nadja Vesna Snezana          
             </div>
             <ReactTimeAgo date={new Date()} locale="en-US"/>
