@@ -11,16 +11,23 @@ export default class App extends React.Component {
     this.state = {
       isListView: true,
       users: [],
-      value:"",
+      value: "",
+      update: new Date(JSON.parse(localStorage.getItem("update")))
     };
   }
   componentDidMount() {
+    if(!this.state.update){
+      localStorage.setItem("update", JSON.stringify(new Date()));
+    }
     fetch("https://randomuser.me/api/?results=15")
       .then((response) => {
         return response.json();
       })
       .then((resolt) => {
-        this.setState({ users: resolt.results });
+        localStorage.setItem("update", JSON.stringify(new Date()));
+        this.setState({ users: resolt.results,
+                        update: new Date() });
+
       });
   }
 
@@ -43,9 +50,17 @@ export default class App extends React.Component {
         />
         {/* //<button onClick={this.toggleLayout}>Click me</button> */}
         {this.state.isListView ? (
-          <Blogpost props1={this.state.users} val={this.state.value} search={this.onChange} />
+          <Blogpost
+            props1={this.state.users}
+            val={this.state.value}
+            search={this.onChange}
+          />
         ) : (
-          <BlogPost2 props1={this.state.users} val={this.state.value} search={this.onChange}/>
+          <BlogPost2
+            props1={this.state.users}
+            val={this.state.value}
+            search={this.onChange}
+          />
         )}
         <Footer />
       </Fragment>
