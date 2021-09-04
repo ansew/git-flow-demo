@@ -1,0 +1,12 @@
+.header{
+    /* background-color: rgb(233, 80, 80); */
+    color:white;
+    text-align: center;
+    padding:10px;
+    
+  }
+  .header li{
+    position:relative;
+    bottom:50px;
+  }
+  
