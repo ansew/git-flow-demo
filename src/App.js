@@ -1,15 +1,11 @@
 
-import { Fragment } from "react"
-import React from "react";
-
-
-
+import React, { Fragment } from 'react';
 import  Header  from "./components/Header/Header.js";
 import './App.css';
-
 import { Blogpost } from "../src/components/Blogpost/BlogList.js";
 import { BlogPost2 } from "../src/components/Blogpost/BlogList2.js";
 import { render } from "@testing-library/react";
+import Footer from './components/footer'
 
 
 
@@ -54,7 +50,7 @@ export default class App extends React.Component {
         <Header toggleLayout={this.toggleLayout} isListView={this.state.isListView} refresh={this.refresh} props1={this.state.users}  />
         {/* //<button onClick={this.toggleLayout}>Click me</button> */}
         {this.state.isListView ? <Blogpost props1={this.state.users} /> : <BlogPost2 props1={this.state.users} />}
-     
+     <Footer />
       </Fragment>
 
     )
