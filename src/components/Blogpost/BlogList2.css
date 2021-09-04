@@ -1,0 +1,24 @@
+.main2{
+
+
+    display:flex;
+    flex-wrap: wrap;
+}
+
+
+.card2{
+
+    width:30%
+}
+
+.email{
+  position:relative;
+  top:10px;
+
+}
+
+.cake{
+    position:relative;
+    top:10px;
+
+}
