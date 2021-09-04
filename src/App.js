@@ -1,10 +1,9 @@
 import './App.css';
+import {SmartPage} from './Page'
 
 function App() {
   return (
-    <div className="App">
-     
-    </div>
+    <SmartPage/>
   );
 }
 
